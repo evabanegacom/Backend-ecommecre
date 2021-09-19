@@ -1,28 +1,38 @@
 require "test_helper"
 
 class ReviewsControllerTest < ActionDispatch::IntegrationTest
+  setup do
+    @review = reviews(:one)
+  end
+
   test "should get index" do
-    get reviews_index_url
+    get reviews_url, as: :json
     assert_response :success
   end
 
-  test "should get show" do
-    get reviews_show_url
+  test "should create review" do
+    assert_difference('Review.count') do
+      post reviews_url, params: { review: { comment: @review.comment, name: @review.name, product_id: @review.product_id } }, as: :json
+    end
+
+    assert_response 201
+  end
+
+  test "should show review" do
+    get review_url(@review), as: :json
     assert_response :success
   end
 
-  test "should get create" do
-    get reviews_create_url
-    assert_response :success
+  test "should update review" do
+    patch review_url(@review), params: { review: { comment: @review.comment, name: @review.name, product_id: @review.product_id } }, as: :json
+    assert_response 200
   end
 
-  test "should get update" do
-    get reviews_update_url
-    assert_response :success
-  end
+  test "should destroy review" do
+    assert_difference('Review.count', -1) do
+      delete review_url(@review), as: :json
+    end
 
-  test "should get destroy" do
-    get reviews_destroy_url
-    assert_response :success
+    assert_response 204
   end
 end
