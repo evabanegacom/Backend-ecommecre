@@ -1,9 +1,8 @@
 class ReviewsController < ApplicationController
     before_action :set_review, only: [:show, :update, :destroy]
-  
     # GET /reviews
     def index
-      @reviews = review.all
+      @reviews = Review.all
   
       render json: @reviews
     end
