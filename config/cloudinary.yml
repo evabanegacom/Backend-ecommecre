@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: ejovial-electronics
+  api_key: '475344956527658'
+  api_secret: Kn-KUF_jvuAnZ0JDCnt7rKKOnGI
+  enhance_image_tag: true
+  static_file_support: false
+production:
+  cloud_name: ejovial-electronics
+  api_key: '475344956527658'
+  api_secret: Kn-KUF_jvuAnZ0JDCnt7rKKOnGI
+  enhance_image_tag: true
+  static_file_support: true
+test:
+  cloud_name: ejovial-electronics
+  api_key: '475344956527658'
+  api_secret: Kn-KUF_jvuAnZ0JDCnt7rKKOnGI
+  enhance_image_tag: true
+  static_file_support: false
