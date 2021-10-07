@@ -38,9 +38,6 @@ ActiveRecord::Schema.define(version: 2021_10_07_074052) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "avatar"
     t.string "avatar_two", default: "avatar_two"
-    t.string "avatar_three", default: "avatar_three"
-    t.string "avatar_four", default: "avatar_four"
-    t.string "avatar_five", default: "avatar_five"
     t.index ["user_id"], name: "index_products_on_user_id"
   end
 
