@@ -47,7 +47,7 @@ ActiveRecord::Schema.define(version: 2021_10_10_081733) do
     t.bigint "product_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "rating", default: "0"
+    t.string "rating", null: false
     t.index ["product_id"], name: "index_reviews_on_product_id"
   end
 
