@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 2021_10_07_083939) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "avatar"
     t.string "avatartwo"
+    t.string "avatarthree"
     t.index ["user_id"], name: "index_products_on_user_id"
   end
 
