@@ -28,7 +28,7 @@ RSpec.describe User, type: :feature do
     end
 
     it 'ensures has a default phone and admin value' do
-      user = User.new(name: 'Precious', email: 'precious@yaho.com', password: 'precious', password_confirmation: 'precious').save
+      user = User.new(name: 'Precious', email: 'precious@yaoo.com', password: 'precious', password_confirmation: 'precious').save
       expect(user).to eql(true)
     end
   end
