@@ -22,17 +22,19 @@ RSpec.describe Product, :type => :model do
   end
 
   describe "Creates product" do
-    it "non-admins can't create products" do
-    user2 = User.create(name: 'Precious', email: 'precious@yahoooo.com', password: 'precious', password_confirmation: 'precious', admin: false)
+    it "Can't create products without a user Id" do
+    user2 = User.create(name: 'Precious', email: 'precious@yahoooo.com', password: 'precious', password_confirmation: 'precious', admin: true)
 
+    
     product = Product.new(name: "Iphone6",
                         description: "Good phone",
                         category: 'electronics',
                         avatar: 'https://www.iphone.org',
                         price: 500.0,
-                        user_id: user2.id).save
-  # expect(product.errors).to be_empty
-
+                        ).save
+    
+    # expect(subject.errors).to be_empty
+    
   expect(product).to eql(false)
     end
   end
